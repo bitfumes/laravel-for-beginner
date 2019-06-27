@@ -1,21 +1,13 @@
 <?php
-// view
-// get
-// post
-// patch or put
-//  delete
-Route::patch('/user', function () {
-    return 'any request';
+use Illuminate\Http\Request;
+
+Route::get('/route',function(){
+    return view('route');
 });
 
-Route::get('about', function () {
-    return view('about');
-})->middleware(['auth', 'checkUser:sarthak@bitfumes.com']);
-
-Route::get('contact', function () {
-    return view('contact');
-})->middleware(['auth', 'checkUser:bitfumes@gmail.com']);
+Route::patch('/handle-route',function(Request $request){
+    return $request->all();
+});
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
