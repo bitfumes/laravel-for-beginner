@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="/handle-route">
+    <form method="post" action="{{ route('handleRoute') }}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         @method('patch')
         <input type="text" name="name">
